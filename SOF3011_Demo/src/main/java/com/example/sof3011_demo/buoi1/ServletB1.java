@@ -21,7 +21,7 @@ public class ServletB1 extends HttpServlet {
         list.add(nguoi1);
         list.add(nguoi2);
         list.add(nguoi3);
-        request.setAttribute("list", list);
+        request.setAttribute("listView", list);
         request.setAttribute("tenview", ten);
         request.getRequestDispatcher("/view/b1.jsp").forward(request, response);
     }
