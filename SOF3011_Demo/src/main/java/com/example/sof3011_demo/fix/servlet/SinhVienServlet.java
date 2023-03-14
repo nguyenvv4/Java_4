@@ -10,7 +10,7 @@ import jakarta.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.util.ArrayList;
 
-@WebServlet(name = "SinhVienController", value = {"/sinh-vien/hien-thi" ,// GET
+@WebServlet(name = "SinhVienController", value = {"/sinh-vien/hien-thi",// GET
         "/sinh-vien/add", // POST
         "/sinh-vien/detail"})
 public class SinhVienServlet extends HttpServlet {
@@ -24,9 +24,9 @@ public class SinhVienServlet extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-            ArrayList<SinhVien> list = hienthi();
-            request.setAttribute("listSinhVien", list);
-            request.getRequestDispatcher("/view/sinh-vien.jsp").forward(request, response);
+        ArrayList<SinhVien> list = hienthi();
+        request.setAttribute("listSinhVien", list);
+        request.getRequestDispatcher("/view/sinh-vien.jsp").forward(request, response);
     }
 
     @Override

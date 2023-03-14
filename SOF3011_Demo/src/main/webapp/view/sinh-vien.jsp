@@ -18,6 +18,34 @@
     />
 <body class="container">
 <%@include file="layout/header.jsp" %>
+
+<form action="/sinh-vien/add" method="post">
+    <div class="form-group row">
+        <label class="col-sm-2 col-form-label">id</label>
+        <div class="col-sm-10">
+            <input class="form-control" type="text" name="id"><br>
+        </div>
+    </div>
+    <div class="form-group row">
+        <label class="col-sm-2 col-form-label">name</label>
+        <div class="col-sm-10">
+            <input class="form-control" type="text" name="name"><br>
+        </div>
+    </div>
+    <div class="form-group row">
+        <label class="col-sm-2 col-form-label">address</label>
+        <div class="col-sm-10">
+            <input class="form-control" type="text" name="address"><br>
+        </div>
+    </div>
+    <div class="form-group row">
+        <label class="col-sm-2 col-form-label">status</label>
+        <div class="col-sm-10">
+            <input class="form-control" type="text" name="status"><br>
+        </div>
+    </div>
+    <button type="submit">Them</button>
+</form>
 <h3>Danh sách sinh vien</h3>
 <table class="table">
     <thead>
