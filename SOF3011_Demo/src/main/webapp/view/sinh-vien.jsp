@@ -65,14 +65,14 @@
             <td><c:if test="${sinhVien.status == 1}">Passed</c:if>
                 <c:if test="${sinhVien.status == 0}">Failed</c:if></td>
             <td>
-                <a href="/sinh-vien/detail?id=${sinhVien.id}">Sua</a>
+                <a href="/sinh-vien/detail?id=${sinhVien.id}">detail</a>
                 <button class="btn"><a href="">Xoa</a></button>
 
             </td>
         </tr>
     </c:forEach>
 </table>
-<button onclick="location.href ='/view/create.jsp'">Them Sinh Vien</button>
+<%--<button onclick="location.href ='/view/create.jsp'">Them Sinh Vien</button>--%>
 <p>xin chào bạn sinh viên</p>
 <%@include file="layout/footer.jsp" %>
 </body>
