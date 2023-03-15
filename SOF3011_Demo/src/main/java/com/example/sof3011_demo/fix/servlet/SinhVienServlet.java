@@ -10,11 +10,12 @@ import jakarta.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.util.ArrayList;
 
-@WebServlet(name = "SinhVienController", value = {"/sinh-vien/hien-thi",// GET
-        "/sinh-vien/add", // POST
-        "/sinh-vien/detail", // GET
-        "/sinh-vien/update", // POST
-})
+@WebServlet(name = "SinhVienController",
+        value = {"/sinh-vien/hien-thi",// GET
+                "/sinh-vien/add", // POST
+                "/sinh-vien/detail", // GET
+                "/sinh-vien/update", // POST
+        })
 public class SinhVienServlet extends HttpServlet {
     ArrayList<SinhVien> list = new ArrayList<>();
 
@@ -61,7 +62,7 @@ public class SinhVienServlet extends HttpServlet {
             String address = request.getParameter("address");
             Integer status = Integer.parseInt(request.getParameter("status"));
             SinhVien sinhVien = new SinhVien(id, name, address, status);
-            list.set(id-1, sinhVien);
+            list.set(id - 1, sinhVien);
             response.sendRedirect("/sinh-vien/hien-thi");
         }
     }
