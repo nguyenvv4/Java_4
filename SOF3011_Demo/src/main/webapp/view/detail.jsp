@@ -18,7 +18,7 @@
 </head>
 <body class="container">
 <%@include file="layout/header.jsp" %>
-<form action="/sinh-vien/add" method="post">
+<form action="/sinh-vien/update" method="post">
     <div class="form-group row">
         <label class="col-sm-2 col-form-label">id</label>
         <div class="col-sm-10">

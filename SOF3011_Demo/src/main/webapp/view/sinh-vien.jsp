@@ -65,7 +65,9 @@
             <td><c:if test="${sinhVien.status == 1}">Passed</c:if>
                 <c:if test="${sinhVien.status == 0}">Failed</c:if></td>
             <td>
-                <button class="btn"><a href="/sinh-vien/detail?id=${sinhVien.id}">Sua</a></button>
+                <a href="/sinh-vien/detail?id=${sinhVien.id}">Sua</a>
+                <button class="btn"><a href="">Xoa</a></button>
+
             </td>
         </tr>
     </c:forEach>
