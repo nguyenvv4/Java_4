@@ -66,7 +66,7 @@
                 <c:if test="${sinhVien.status == 0}">Failed</c:if></td>
             <td>
                 <a href="/sinh-vien/detail?id=${sinhVien.id}">detail</a>
-                <button class="btn"><a href="">Xoa</a></button>
+                <a href="/sinh-vien/delete?id=${sinhVien.id}">Xoa</a>
 
             </td>
         </tr>

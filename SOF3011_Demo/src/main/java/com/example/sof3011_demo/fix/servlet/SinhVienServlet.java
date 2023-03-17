@@ -14,7 +14,8 @@ import java.util.ArrayList;
         value = {"/sinh-vien/hien-thi",// GET
                 "/sinh-vien/add", // POST
                 "/sinh-vien/detail", // GET
-                "/sinh-vien/update", //POST
+                "/sinh-vien/update", // POST
+                "/sinh-vien/delete", // GET
 
         })
 public class SinhVienServlet extends HttpServlet {
@@ -41,6 +42,10 @@ public class SinhVienServlet extends HttpServlet {
                 }
             }
             request.getRequestDispatcher("/view/detail.jsp").forward(request, response);
+        } else if (uri.contains("delete")) {
+            Integer id = Integer.parseInt(request.getParameter("id"));
+            list.remove(id - 1);
+            response.sendRedirect("/sinh-vien/hien-thi");
         }
     }
 
@@ -56,7 +61,6 @@ public class SinhVienServlet extends HttpServlet {
             list.add(sinhVien);
             response.sendRedirect("/sinh-vien/hien-thi");
         } else if (uri.contains("update")) {
-            // thuc hien update
             Integer id = Integer.parseInt(request.getParameter("id"));
             String name = request.getParameter("name");
             String address = request.getParameter("address");
@@ -64,7 +68,6 @@ public class SinhVienServlet extends HttpServlet {
             SinhVien sinhVien = new SinhVien(id, name, address, status);
             list.set(id - 1, sinhVien);
             response.sendRedirect("/sinh-vien/hien-thi");
-            // load lai trang hien thi
         }
     }
 
