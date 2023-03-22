@@ -1,5 +1,6 @@
 package com.example.sof3011_demo.db.util;
 
+import com.example.sof3011_demo.db.entity.KhachHang;
 import org.hibernate.SessionFactory;
 import org.hibernate.boot.registry.StandardServiceRegistryBuilder;
 import org.hibernate.cfg.Configuration;
@@ -26,6 +27,8 @@ public class HibernateUtil {
         conf.setProperties(properties);
 //        conf.addAnnotatedClass(DongVat.class);
 //        conf.addAnnotatedClass(SinhVien.class);
+        conf.addAnnotatedClass(KhachHang.class);
+
         ServiceRegistry registry = new StandardServiceRegistryBuilder()
                 .applySettings(conf.getProperties()).build();
         FACTORY = conf.buildSessionFactory(registry);
