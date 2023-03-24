@@ -20,7 +20,7 @@
     <thead>
     <tr>
         <td>id</td>
-        <td>Ma/td>
+        <td>Ma</td>
         <td>Ten</td>
         <td>Ten Dem</td>
         <td>Ho</td>
@@ -34,7 +34,23 @@
     </tr>
     </thead>
     <tbody>
-
+    <c:forEach items="${listKhachHang}" var="kh">
+        <tr>
+            <td>${kh.id}</td>
+            <td>${kh.ma}</td>
+            <td>${kh.ten}</td>
+            <td>${kh.tenDem}</td>
+            <td>${kh.ho}</td>
+            <td>${kh.ngaySinh}</td>
+            <td>${kh.sdt}</td>
+            <td>${kh.diaChi}</td>
+            <td>${kh.thanhPho}</td>
+            <td>${kh.quocGia}</td>
+            <td>${kh.matKhau}</td>
+            <td><a href="">Xoa</a>
+                <a href="">Detail</a></td>
+        </tr>
+    </c:forEach>
     </tbody>
 </table>
 </body>
