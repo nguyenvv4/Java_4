@@ -10,13 +10,23 @@ import java.util.ArrayList;
 public class KhachHangRepository {
     // thuc hien truy van
 
-    Session session = HibernateUtil.getFACTORY().openSession();
-
     public ArrayList<KhachHang> getAll() {
-        Query query = session.createQuery("FROM KhachHang");
-        ArrayList<KhachHang> listKhachHang = (ArrayList<KhachHang>) query.getResultList();
+        ArrayList<KhachHang> listKhachHang = new ArrayList<>();
+        try (Session session = HibernateUtil.getFACTORY().openSession()) {
+            Query query = session.createQuery("from KhachHang ");
+            listKhachHang = (ArrayList<KhachHang>) query.getResultList();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
         return listKhachHang;
+
     }
-    
+
+    public static void main(String[] args) {
+        ArrayList<KhachHang> list = new KhachHangRepository().getAll();
+        for (KhachHang kh : list) {
+            System.out.println(kh.toString());
+        }
+    }
 
 }
