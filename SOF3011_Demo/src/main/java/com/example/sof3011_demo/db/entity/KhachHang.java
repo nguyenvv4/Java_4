@@ -2,15 +2,16 @@ package com.example.sof3011_demo.db.entity;
 
 import javax.persistence.*;
 import java.util.Date;
+import java.util.UUID;
 
 @Table(name = "KhachHang")
 @Entity
 public class KhachHang {
 
     @Id
-//    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "Id")
-    private String id;
+    private UUID id;
 
     @Column(name = "Ma")
     private String ma;
@@ -45,7 +46,8 @@ public class KhachHang {
     public KhachHang() {
     }
 
-    public KhachHang(String id, String ma, String ten, String tenDem, String ho, Date ngaySinh, String sdt, String diaChi, String thanhPho, String quocGia, String matKhau) {
+
+    public KhachHang(UUID id, String ma, String ten, String tenDem, String ho, Date ngaySinh, String sdt, String diaChi, String thanhPho, String quocGia, String matKhau) {
         this.id = id;
         this.ma = ma;
         this.ten = ten;
@@ -59,11 +61,11 @@ public class KhachHang {
         this.matKhau = matKhau;
     }
 
-    public String getId() {
+    public UUID getId() {
         return id;
     }
 
-    public void setId(String id) {
+    public void setId(UUID id) {
         this.id = id;
     }
 
