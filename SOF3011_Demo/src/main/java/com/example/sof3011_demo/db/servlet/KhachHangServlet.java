@@ -50,39 +50,71 @@ public class KhachHangServlet extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
-       String uri = request.getRequestURI();
-       if (uri.contains("/add")) {
-           String ma = request.getParameter("ma");
-           String ten = request.getParameter("ten");
-           String tenDem = request.getParameter("tenDem");
-           String sdt = request.getParameter("sdt");
-           String diaChi = request.getParameter("diaChi");
-           String thanhPho = request.getParameter("thanhPho");
-           String quocGia = request.getParameter("quocGia");
-           String matKhau = request.getParameter("matKhau");
-           String ho = request.getParameter("ho");
-           Date ngaySinh;
-           try {
-               ngaySinh = dateFormat.parse(request.getParameter("ngaySinh"));
-           } catch (ParseException e) {
-               throw new RuntimeException(e);
-           }
-           KhachHang khachHang = new KhachHang();
-           khachHang.setMa(ma);
-           khachHang.setTen(ten);
-           khachHang.setHo(ho);
-           khachHang.setTenDem(tenDem);
-           khachHang.setNgaySinh(ngaySinh);
-           khachHang.setSdt(sdt);
-           khachHang.setDiaChi(diaChi);
-           khachHang.setThanhPho(thanhPho);
-           khachHang.setQuocGia(quocGia);
-           khachHang.setMatKhau(matKhau);
-           khachHangRepository.add(khachHang);
-           response.sendRedirect("/khach-hang/hien-thi");
-       }else if(uri.contains("/update")){
-           // xu li update
-       }
+        String x = request.getParameter("id");
+        System.out.println("x la: "+x);
+        String uri = request.getRequestURI();
+        if (uri.contains("/add")) {
+            String ma = request.getParameter("ma");
+            String ten = request.getParameter("ten");
+            String tenDem = request.getParameter("tenDem");
+            String sdt = request.getParameter("sdt");
+            String diaChi = request.getParameter("diaChi");
+            String thanhPho = request.getParameter("thanhPho");
+            String quocGia = request.getParameter("quocGia");
+            String matKhau = request.getParameter("matKhau");
+            String ho = request.getParameter("ho");
+            Date ngaySinh;
+            try {
+                ngaySinh = dateFormat.parse(request.getParameter("ngaySinh"));
+            } catch (ParseException e) {
+                throw new RuntimeException(e);
+            }
+            KhachHang khachHang = new KhachHang();
+            khachHang.setMa(ma);
+            khachHang.setTen(ten);
+            khachHang.setHo(ho);
+            khachHang.setTenDem(tenDem);
+            khachHang.setNgaySinh(ngaySinh);
+            khachHang.setSdt(sdt);
+            khachHang.setDiaChi(diaChi);
+            khachHang.setThanhPho(thanhPho);
+            khachHang.setQuocGia(quocGia);
+            khachHang.setMatKhau(matKhau);
+            khachHangRepository.add(khachHang);
+            response.sendRedirect("/khach-hang/hien-thi");
+        } else if (uri.contains("/update")) {
+            // xu li update
+            UUID id = UUID.fromString(request.getParameter("id"));
+            String ma = request.getParameter("ma");
+            String ten = request.getParameter("ten");
+            String tenDem = request.getParameter("tenDem");
+            String sdt = request.getParameter("sdt");
+            String diaChi = request.getParameter("diaChi");
+            String thanhPho = request.getParameter("thanhPho");
+            String quocGia = request.getParameter("quocGia");
+            String matKhau = request.getParameter("matKhau");
+            String ho = request.getParameter("ho");
+            Date ngaySinh;
+            try {
+                ngaySinh = dateFormat.parse(request.getParameter("ngaySinh"));
+            } catch (ParseException e) {
+                throw new RuntimeException(e);
+            }
+            KhachHang khachHang = new KhachHang();
+            khachHang.setId(id);
+            khachHang.setMa(ma);
+            khachHang.setTen(ten);
+            khachHang.setHo(ho);
+            khachHang.setTenDem(tenDem);
+            khachHang.setNgaySinh(ngaySinh);
+            khachHang.setSdt(sdt);
+            khachHang.setDiaChi(diaChi);
+            khachHang.setThanhPho(thanhPho);
+            khachHang.setQuocGia(quocGia);
+            khachHang.setMatKhau(matKhau);
+            khachHangRepository.update(khachHang);
+            response.sendRedirect("/khach-hang/hien-thi");
+        }
     }
 
 
