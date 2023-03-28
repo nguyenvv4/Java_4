@@ -35,6 +35,7 @@ public class KhachHangRepository {
 //            khachHang= (KhachHang) query.getSingleResult();
             khachHang = session.get(KhachHang.class, id);
 
+
         } catch (Exception e) {
             e.printStackTrace();
         }
