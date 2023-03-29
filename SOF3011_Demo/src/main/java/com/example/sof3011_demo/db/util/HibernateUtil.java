@@ -1,5 +1,6 @@
 package com.example.sof3011_demo.db.util;
 
+import com.example.sof3011_demo.cart.entity.SanPham;
 import com.example.sof3011_demo.db.entity.KhachHang;
 import org.hibernate.SessionFactory;
 import org.hibernate.boot.registry.StandardServiceRegistryBuilder;
@@ -28,6 +29,7 @@ public class HibernateUtil {
 //        conf.addAnnotatedClass(DongVat.class);
 //        conf.addAnnotatedClass(SinhVien.class);
         conf.addAnnotatedClass(KhachHang.class);
+        conf.addAnnotatedClass(SanPham.class);
 
         ServiceRegistry registry = new StandardServiceRegistryBuilder()
                 .applySettings(conf.getProperties()).build();
