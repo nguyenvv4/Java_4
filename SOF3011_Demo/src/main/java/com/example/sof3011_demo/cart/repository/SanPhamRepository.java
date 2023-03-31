@@ -11,7 +11,7 @@ public class SanPhamRepository {
 
     public ArrayList<SanPham> getList() {
         Session session = HibernateUtil.getFACTORY().openSession();
-        Query query = session.createQuery("FROM SanPham ");
+        Query query = session.createQuery("FROM SanPham1 ");
         ArrayList<SanPham> sanPhams = (ArrayList<SanPham>) query.getResultList();
         return sanPhams;
     }
