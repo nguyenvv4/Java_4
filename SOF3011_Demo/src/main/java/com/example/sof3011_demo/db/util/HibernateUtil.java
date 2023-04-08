@@ -2,6 +2,7 @@ package com.example.sof3011_demo.db.util;
 
 import com.example.sof3011_demo.cart.entity.SanPham;
 import com.example.sof3011_demo.db.entity.KhachHang;
+import com.example.sof3011_demo.filter.entity.MauSac;
 import com.example.sof3011_demo.join.entity.ChiTietSP;
 import com.example.sof3011_demo.join.entity.SanPham1;
 import org.hibernate.SessionFactory;
@@ -35,6 +36,7 @@ public class HibernateUtil {
         conf.addAnnotatedClass(SanPham1.class);
 
         conf.addAnnotatedClass(ChiTietSP.class);
+        conf.addAnnotatedClass(MauSac.class);
 
         ServiceRegistry registry = new StandardServiceRegistryBuilder()
                 .applySettings(conf.getProperties()).build();
